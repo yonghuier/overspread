@@ -631,7 +631,7 @@ class Run_Fitter:
                         fitinfo['chi2'][Ibm,Iht]=np.real(np.sum(np.power(np.real(infodict['fvec']),2.0))/fitinfo['dof'][Ibm,Iht])
 
                         # get model ACF and parameter arrays
-                        (m,m0,ni,ti,psi,vi)=fit_fun_with_noise(x,tAcf,tAcfVar,self.AMB['Delay'],np.transpose(self.AMB['Wlag']),Psc,self.pldfvvr,self.pldfvvi,self.ct_spec,Ifit,
+                        (m,m0,ni,ti,psi,vi)=fit_fun_with_noise(x,tAcf,tAcfVar,self.AMB['Delay'],np.transpose(self.AMB['Wlag'][Iy,:]),Psc,self.pldfvvr,self.pldfvvi,self.ct_spec,Ifit,
                             f,ni,ti,mi,psi,vi,self.k_radar0,perturbation_noise_acf,noise_var,self.FITOPTS['p_N0'],self.FITOPTS['p_T0'],self.FITOPTS['p_M0'],mode=1)
                         mod_ACF[Ibm,Iy,Iht]=m[Iy]
                         meas_ACF[Ibm,Iy,Iht]=tAcf[Iy]
