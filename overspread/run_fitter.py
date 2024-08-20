@@ -916,7 +916,8 @@ class Run_Fitter:
                         temp = array.read()
                         shape = np.shape(temp)
                         if len(shape) == 0:
-                            temp = temp.tolist()
+                            if isinstance(temp, np.ndarray):
+                                temp = temp.tolist()
                             if isinstance(temp,bytes):
                                 temp = temp.decode('utf-8')
                         output[group._v_pathname][array.name]=temp
@@ -935,7 +936,8 @@ class Run_Fitter:
                         temp = array.read()
                         shape = np.shape(temp)
                         if len(shape) == 0:
-                            temp = temp.tolist()
+                            if isinstance(temp, np.ndarray):
+                                temp = temp.tolist()
                             if isinstance(temp,bytes):
                                 temp = temp.decode('utf-8')
                         output[group._v_pathname][array.name]=temp
