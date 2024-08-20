@@ -12,7 +12,7 @@ fi
 if [ $# -eq 3 ]; then
     FIT_CONFIG=$3
 fi
-if [ $# -eq 2 ]; then
+if [ $# -eq 4 ]; then
     FIT_CONFIG=$3
     IO_CONFIG=$4
 fi
