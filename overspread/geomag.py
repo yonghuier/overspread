@@ -212,7 +212,7 @@ def geomagTime(YR,az,el,CLAT,CLONG,CALT=0.0,rng=np.arange(0.,1050.,50.)):
                 lon[i,j] = (GLON + 360) % 360  # return in 0-360 format
 
                 # kgeo: get az, el from the range gate to site
-                kaz, kel, _ = pymap3d.geodetic2aer(CLAT,CLONG,CALT*1000, GDLAT, GLON, GDALT, ell=None, deg=True)
+                kaz, kel, _ = pymap3d.geodetic2aer(CLAT,CLONG,CALT*1000, GDLAT, GLON, GDALT, deg=True)
 
                 # kgeo is in opposite direction, hence the negative sign (E, N, U)
                 kgeodetic = -1 * np.array([np.cos(kel*np.pi/180.)*np.sin(kaz*np.pi/180),
